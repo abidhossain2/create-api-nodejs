@@ -1,0 +1,42 @@
+[
+    {
+        "id":1,
+        "gender":"male",
+        "name":"Harry",
+        "contact":"01765489231",
+        "address":"park view road, Dhaka",
+        "photoUrl":"https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "id":2,
+        "gender":"male",
+        "name":"Xavier",
+        "contact":"01648935261",
+        "address":"Ring house, Bogra",
+        "photoUrl":"https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "id":3,
+        "gender":"female",
+        "name":"Anyy",
+        "contact":"01554783921",
+        "address":"321 street, Comilla",
+        "photoUrl":"https://images.unsplash.com/photo-1499952127939-9bbf5af6c51c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "id":4,
+        "gender":"female",
+        "name":"Ember",
+        "contact":"01812398654",
+        "address":"Golden street, Rajshahi",
+        "photoUrl":"https://images.unsplash.com/photo-1593104547489-5cfb3839a3b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzB8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+        "id":5,
+        "gender":"male",
+        "name":"Gerrad",
+        "contact":"01946378254",
+        "address":"Ali complex, Khulna",
+        "photoUrl":"https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDV8fHBlcnNvbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"
+    }
+]
