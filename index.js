@@ -48,9 +48,14 @@ app.post('/user/save', (req, res) => {
         } else {
             const json = JSON.parse(data.toString())
             const newData = req.body;
-            json.push(newData)
-            fs.writeFileSync("data.json", JSON.stringify(json))
-            res.end("saved")
+            const { id, gender, name, contact, address, photoUrl } = newData;
+            if (id, gender, name, contact, address, photoUrl) {
+                json.push(newData)
+                fs.writeFileSync("data.json", JSON.stringify(json))
+                res.end("Successfully saved")
+            }else{
+                res.end('Provide all data')
+            }
         }
     })
 })
