@@ -64,15 +64,14 @@ app.post('/user/save', (req, res) => {
 
 // update specific user
 
-app.patch('/user/update/:id', (req, res) => {
+app.patch('/user/update', (req, res) => {
     fs.readFile('data.json', function (err, data) {
         if (err) {
             res.end("problem reading")
         } else {
             const jsonData = JSON.parse(data.toString())
-            const { id } = req.params;
+            const { id, gender, name, contact, address, photoUrl } = req.body;
             let newData = jsonData.find(el => el.id == id);
-            const { gender, name, contact, address, photoUrl } = req.body;
             if (newData?.id) {
 
                 if (gender) {
