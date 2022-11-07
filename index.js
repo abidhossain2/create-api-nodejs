@@ -73,23 +73,28 @@ app.patch('/user/update/:id', (req, res) => {
             const { id } = req.params;
             let newData = jsonData.find(el => el.id == id);
             const { gender, name, contact, address, photoUrl } = req.body;
-            if (gender) {
-                newData.gender = gender;
+            if (newData?.id) {
+
+                if (gender) {
+                    newData.gender = gender;
+                }
+                if (name) {
+                    newData.name = name;
+                }
+                if (contact) {
+                    newData.contact = contact;
+                }
+                if (address) {
+                    newData.address = address;
+                }
+                if (photoUrl) {
+                    newData.photoUrl = photoUrl;
+                }
+                fs.writeFileSync('data.json', JSON.stringify(jsonData));
+                res.end("successfully update")
+            } else {
+                res.end("This user not exist");
             }
-            if (name) {
-                newData.name = name;
-            }
-            if (contact) {
-                newData.contact = contact;
-            }
-            if (address) {
-                newData.address = address;
-            }
-            if (photoUrl) {
-                newData.photoUrl = photoUrl;
-            }
-            fs.writeFileSync('data.json', JSON.stringify(jsonData));
-            res.end("successfully update")
         }
     })
 })
