@@ -99,6 +99,28 @@ app.patch('/user/update', (req, res) => {
 })
 
 
+
+app.patch('/user/bulk-update', (req, res) => {
+    fs.readFile('data.json', function (err, data) {
+        if (err) {
+            res.end("problem reading")
+        } else {
+            const jsonData = JSON.parse(data.toString())
+            let newData = req.body;
+            const findData = newData.map(element => element.id);
+            let existData = jsonData.filter(element => findData.includes(element.id))
+                newData.forEach((data, index) => {
+                    if (index == 0 || index == 1 || index == 2 || index == 3 || index == 4) {
+                        existData[index].contact = data.contact
+                    }
+                    fs.writeFileSync('data.json', JSON.stringify(jsonData));
+                    res.end("successfully update contact no")
+                })
+        }
+    })
+})
+
+
 app.get('/', (req, res) => {
     res.send("Server running successfully");
 })
