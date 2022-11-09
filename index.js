@@ -99,6 +99,7 @@ app.patch('/user/update', (req, res) => {
 })
 
 
+// update multiple user
 
 app.patch('/user/bulk-update', (req, res) => {
     fs.readFile('data.json', function (err, data) {
@@ -109,13 +110,36 @@ app.patch('/user/bulk-update', (req, res) => {
             let newData = req.body;
             const findData = newData.map(element => element.id);
             let existData = jsonData.filter(element => findData.includes(element.id))
-                newData.forEach((data, index) => {
-                    if (index == 0 || index == 1 || index == 2 || index == 3 || index == 4) {
-                        existData[index].contact = data.contact
-                    }
+            newData.forEach((data, index) => {
+                if (index == 0 || index == 1 || index == 2 || index == 3 || index == 4) {
+                    existData[index].contact = data.contact
                     fs.writeFileSync('data.json', JSON.stringify(jsonData));
-                    res.end("successfully update contact no")
-                })
+                }
+            })
+            res.end("successfully update contact no")
+        }
+    })
+})
+
+
+// Delete user 
+
+app.delete('/user/delete', (req, res) => {
+    fs.readFile('data.json', function (err, data) {
+        if (err) {
+            res.end("problem reading")
+        } else {
+            let jsonData = JSON.parse(data.toString())
+            const { id } = req.body;
+            let index = jsonData.findIndex(item => item.id == id);
+            if ( id == (index+1)) {
+                jsonData.splice(index, 1)
+                fs.writeFileSync('data.json', JSON.stringify(jsonData));
+                res.end("successfully delete")
+            }else{
+                res.end("This user not exist")
+            }
+            
         }
     })
 })
